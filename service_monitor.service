@@ -1,0 +1,14 @@
+[Unit]
+Description=Service checker
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+User=exporter
+Group=exporter
+Type=simple
+ExecStart=/usr/local/bin/service_monitor_amd64 -port 9003 -file "/usr/local/bin/services.txt"
+SyslogIdentifier=Service checker
+
+[Install]
+WantedBy=multi-user.target
