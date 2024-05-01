@@ -4,8 +4,8 @@ Wants=network-online.target
 After=network-online.target
 
 [Service]
-User=exporter
-Group=exporter
+User=root
+Group=root
 Type=simple
 ExecStart=/usr/local/bin/service_monitor_amd64 -port 9003 -file "/usr/local/bin/services.txt"
 SyslogIdentifier=Service checker
