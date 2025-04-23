@@ -7,7 +7,7 @@ After=network-online.target
 User=root
 Group=root
 Type=simple
-ExecStart=/usr/local/bin/service_monitor_amd64 -port 9003 -file "/usr/local/bin/services.txt"
+ExecStart=/usr/local/bin/service_monitor_amd64 -port 9062 -services "/usr/local/bin/services.txt" -auth "/usr/local/bin/auth.txt"
 SyslogIdentifier=Service checker
 
 [Install]
